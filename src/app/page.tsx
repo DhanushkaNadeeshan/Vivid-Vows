@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import RightSidebar from "@/components/RightSidebar";
 import Info from "./components/Info";
 import CheckList from "./components/CheckList";
+import GuestList from "./components/GeustList";
+import Budget from "./components/Budjet";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
           <div className="container p-4 mx-auto">
             <Info />
             <CheckList />
+            <GuestList/>
+            <Budget/>
           </div>
         </div>
         <div className="w-1/4">
