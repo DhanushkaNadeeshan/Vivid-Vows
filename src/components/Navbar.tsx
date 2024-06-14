@@ -5,7 +5,7 @@ interface NavbarProsp {
 }
 
 const Navbar: FC<NavbarProsp> = ({ children }) => {
-  return <div className="sticky top-0 p-4 bg-white">{children}</div>;
+  return <div className="sticky top-0 p-4 bg-white z-50">{children}</div>;
 };
 
 export default Navbar;
