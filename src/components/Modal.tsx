@@ -48,7 +48,7 @@ const Modal: React.FC<ModalProps> & ModalSubComponents = ({
   return ReactDOM.createPortal(
     <div className="fixed backdrop-blur-sm flex-col top-0 w-screen h-screen flex justify-center items-center">
       <div
-        className={`w-3/4 md:w-1/2 bg-blue-200 p-4 rounded-lg shadow opacity-100 ${animationCSS}`}
+        className={`w-3/4 md:w-1/2 p-4 bg-white rounded-lg shadow opacity-100 border border-slate-300  ${animationCSS}`}
       >
         {children}
       </div>

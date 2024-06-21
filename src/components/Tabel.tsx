@@ -31,7 +31,7 @@ interface THProps {
 
 const TH: FC<THProps> = ({ children, className = "" }) => {
   return (
-    <th className={`bg-blue-200 text-blue-700 text-sm font-semibold py-1 ${className}`}>{children}</th>
+    <th className={`bg-blue-200 text-blue-700 border border-blue-200 text-sm font-semibold py-1 ${className}`}>{children}</th>
   );
 };
 
