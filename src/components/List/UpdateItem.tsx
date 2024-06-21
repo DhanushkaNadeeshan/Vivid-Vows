@@ -3,14 +3,16 @@ import { FC, useState, KeyboardEvent } from "react";
 import Modal from "@/components/Modal";
 import { useList } from "./ListContext";
 import { GrUpdate } from "react-icons/gr";
+import SuccessButton from "../SuccesButton";
+import ErrorButton from "../ErrorButton";
 
 interface UpdateItemProps {
   index: number;
   title: string;
-  hadleEditor: (state:boolean) => void;
+  hadleEditor: (state: boolean) => void;
 }
 
-const UpdateItem: FC<UpdateItemProps> = ({ index, title,hadleEditor }) => {
+const UpdateItem: FC<UpdateItemProps> = ({ index, title, hadleEditor }) => {
   const { updateItem } = useList();
   const [isShowModal, setIsShowModal] = useState<boolean>(false);
   const [item, setItem] = useState<string>(title);
@@ -27,7 +29,7 @@ const UpdateItem: FC<UpdateItemProps> = ({ index, title,hadleEditor }) => {
     updateItem(index, data);
     setIsShowModal(false);
     setItem("");
-    hadleEditor(false)
+    hadleEditor(false);
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -60,10 +62,12 @@ const UpdateItem: FC<UpdateItemProps> = ({ index, title,hadleEditor }) => {
           />
         </Modal.Body>
         <Modal.Footer customeCSS="flex justify-end">
-          <button onClick={update} className="m-4">
+          <SuccessButton onClick={update} className="m-2">
             Update
-          </button>
-          <button onClick={handleClose}>Close</button>
+          </SuccessButton>
+          <ErrorButton onClick={handleClose} className="m-2">
+            Close
+          </ErrorButton>
         </Modal.Footer>
       </Modal>
     </>

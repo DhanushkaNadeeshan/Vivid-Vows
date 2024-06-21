@@ -2,6 +2,8 @@ import { FC, useState, KeyboardEvent } from "react";
 import { IoIosAddCircle } from "react-icons/io";
 import Modal from "@/components/Modal";
 import { useList } from "./ListContext";
+import SuccessButton from "../SuccesButton";
+import ErrorButton from "../ErrorButton";
 
 const AddItem: FC = ({}) => {
   const { addItem } = useList();
@@ -29,10 +31,10 @@ const AddItem: FC = ({}) => {
     }
   };
 
-  const handleClose = ()=>{
-    setIsShowModal(false)
-    setItem("")
-  }
+  const handleClose = () => {
+    setIsShowModal(false);
+    setItem("");
+  };
 
   return (
     <>
@@ -55,10 +57,10 @@ const AddItem: FC = ({}) => {
           />
         </Modal.Body>
         <Modal.Footer customeCSS="flex justify-end">
-          <button onClick={add} className="m-4">
+          <SuccessButton onClick={add} className="m-2">
             Add
-          </button>
-          <button onClick={handleClose}>Close</button>
+          </SuccessButton>
+          <ErrorButton onClick={handleClose} className="m-2">Close</ErrorButton>
         </Modal.Footer>
       </Modal>
     </>
